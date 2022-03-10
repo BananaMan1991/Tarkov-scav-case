@@ -6,6 +6,10 @@ import colorsys
 BCK = 's'
 FWD = 'w'
 LFT = 'd'
+# In RECEIVE_PATH enter path to receive.png
+RECEIVE_PATH = r'C:\Users\Korisnik\Desktop\Programming\Pyhton\TarkovScavCase\receive.png'
+# In PATH enter path to game launcher
+PATH = r'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Battlestate Games\Battlestate Games Launcher'
 
 def mouse_click():
     time.sleep(1)
@@ -39,7 +43,7 @@ def moonshine_location(offset=0):
 def moonshine_claim():
     moonshine_location(offset=300)
     mouse_click()
-    receive_location = pyag.locateOnScreenCenter('C:\Users\Korisnik\Desktop\Programming\Pyhton\TarkovScavCase\receive.png')
+    receive_location = pyag.locateOnScreenCenter(RECEIVE_PATH)
     pyag.moveTo(receive_location)
     mouse_click()
 
@@ -62,7 +66,7 @@ def moonshine_start():
     mouse_click()
 
 def game_start():
-    os.startfile("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Battlestate Games\Battlestate Games Launcher")
+    os.startfile(PATH)
     time.sleep(15)
     pyag.moveTo(1380,800)
     mouse_click()
